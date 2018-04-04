@@ -11,6 +11,9 @@ run the following in R will add two functions to your environment
 
 bng_to_wgs84(df, e, n) and wgs_84_to_bng()
 
+bng_to_wgs84(df, e, n) takes a dataframe and the name of the eastings and northings. If named e and n simply supply the dataframe.
+
+
 _source("https://raw.githubusercontent.com/ihaveknowledge/UsefulRScripts/master/Convert%20between%20British%20National%20Grid%20and%20WGS84%20functions.R")_
 
 Pass a dataframe as the argument to the function with columns named e + n for BNG and lon + lat for WGS84.
