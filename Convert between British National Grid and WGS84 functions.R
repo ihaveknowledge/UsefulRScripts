@@ -1,8 +1,14 @@
 #-------British National Grid to WGS84-----------------
-bng_to_wgs84 <- function(datain){
+bng_to_wgs84 <- function(datain, east="e", north="n"){
   library(rgdal) 
-  bng = datain 
-  coordinates(bng) = ~ e + n 
+  head(datain)
+  if (north!= "n" & east!= "e"){
+  names(datain)[names(datain) == east] <- "e"
+  names(datain)[names(datain) == north] <- "n"
+  }
+  head(datain)
+  bng = datain
+  coordinates(bng) = ~ e + n
   bng@proj4string = CRS("+init=epsg:27700") 
   latlon = spTransform(bng, CRS("+proj=longlat +datum=WGS84")) 
   out = cbind(datain, coordinates(latlon)) 
