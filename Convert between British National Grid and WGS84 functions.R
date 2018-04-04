@@ -1,5 +1,5 @@
 #-------British National Grid to WGS84-----------------
-bng_to_wgs84 <- function(datain){
+bng_to_wgs84 <- function(datain, e="e", n="n"){
   library(rgdal) 
   bng = datain 
   coordinates(bng) = ~ e + n 
