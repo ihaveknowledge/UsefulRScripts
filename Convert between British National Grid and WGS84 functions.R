@@ -28,3 +28,5 @@ wgs_84_to_bng <- function(datain){
   colnames(out) = c(names(datain),'e','n') 
   return(out)
 }
+
+print('done')
